@@ -203,7 +203,7 @@ def process_product_dicts(product_dicts, export_to_excel=True):
                                 engine_kwargs={
                                     'options': {
                                         'strings_to_numbers': True,
-                                        'strings_to_urls': False,
+                                        'strings_to_urls': True,
                                         }
                                     }
                                 )
