@@ -113,14 +113,14 @@ def process_product_dicts(product_dicts, export_to_excel=True):
         {'col_name': 'Processing and Cleaning Weaknesses', 'col_width': 25},
         {'col_name': 'Age Class', 'col_width': 20},
         {'col_name': 'Approved Child Weight', 'col_width': 26},
+        {'col_name': 'Child Height From', 'col_width': 21},
+        {'col_name': 'Child Height To', 'col_width': 19},
         {'col_name': 'Backward Facing Option', 'col_width': 27},
         {'col_name': 'Forward Facing Option', 'col_width': 25},
         {'col_name': 'Horizontal Transport', 'col_width': 24},
         {'col_name': 'Isofix', 'col_width': 11},
         {'col_name': 'Impact Shield', 'col_width': 17},
         {'col_name': 'Two-point Belt', 'col_width': 19},
-        {'col_name': 'Child Height From', 'col_width': 21},
-        {'col_name': 'Child Height To', 'col_width': 19},
         {'col_name': 'Seat Weight', 'col_width': 16},
         {'col_name': 'Montage Notes', 'col_width': 20},
     ]
@@ -182,20 +182,20 @@ def process_product_dicts(product_dicts, export_to_excel=True):
         
         obj["Age Class"] = product["data"]["ageClass"]
         obj["Approved Child Weight"] = product["data"]["approvedChildWeight"]
+        obj["Child Height From"] = product["data"]["dimensionsFrom"]
+        obj["Child Height To"] = product["data"]["dimensionsTo"]
         obj["Backward Facing Option"] = product["data"]["backwardFacingOption"]
         obj["Forward Facing Option"] = product["data"]["forwardFacingOption"]
         obj["Horizontal Transport"] = product["data"]["horizontalTransport"]
         obj["Isofix"] = product["data"]["isoFix"]
         obj["Impact Shield"] = product["data"]["body"]
         obj["Two-point Belt"] = product["data"]["twoPointBelt"]
-        obj["Child Height From"] = product["data"]["dimensionsFrom"]
-        obj["Child Height To"] = product["data"]["dimensionsTo"]
         obj["Seat Weight"] = product["data"]["seatWeight"]
         obj["Montage Notes"] = "\n".join(product["data"]["sanitizedInstallation"])
         
         final_list.append(obj)
         
-    df = pd.DataFrame(final_list)
+    df = pd.DataFrame(final_list, columns=[c["col_name"] for c in col_formatting])
     
     if export_to_excel:
         writer = pd.ExcelWriter(f'adac_export_{datetime.now().strftime("%Y%m%d_%H%M%S")}.xlsx',
