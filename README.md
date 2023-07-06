@@ -27,24 +27,24 @@ Tracked categories:
 - Operation Rating
 - Operation Strengths
 - Operation Weaknesses
-- Processing and Cleaning Rating
-- Processing and Cleaning Strengths
-- Processing and Cleaning Weaknesses
-- Age Class
-- Approved Child Weight
-- Backward Facing Option
-- Forward Facing Option
-- Horizontal Transport
-- Isofix
-- Impact Shield
-- Two-point Belt
-- Child Height From
-- Child Height To
-- Seat Weight
-- Montage Notes
 - Ergonomy Rating
 - Ergonomy Strengths
 - Ergonomy Weaknesses
 - Pollutants Rating
 - Pollutants Strengths
 - Pollutants Weaknesses
+- Processing and Cleaning Rating
+- Processing and Cleaning Strengths
+- Processing and Cleaning Weaknesses
+- Age Class
+- Approved Child Weight
+- Child Height From
+- Child Height To
+- Backward Facing Option
+- Forward Facing Option
+- Horizontal Transport
+- Isofix
+- Impact Shield
+- Two-point Belt
+- Seat Weight
+- Montage Notes
